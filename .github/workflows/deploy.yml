@@ -23,8 +23,8 @@ jobs:
       - name: Build и push image with two tags
         id: build-push
         env:
-          IMAGE_SHA: ${{ vars.DOCKER_USER }}/website-v1:sha-${{ github.sha }}
-          IMAGE_LATEST: ${{ vars.DOCKER_USER }}/website-v1:latest
+          IMAGE_SHA: ${{ vars.DOCKER_USER }}/test-api:sha-${{ github.sha }}
+          IMAGE_LATEST: ${{ vars.DOCKER_USER }}/test-api:latest
         run: |
           docker build -t $IMAGE_SHA -t $IMAGE_LATEST .
           docker push $IMAGE_SHA
